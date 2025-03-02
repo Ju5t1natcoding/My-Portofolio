@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iustin-Alexandru Frățeanu - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <h1 data-lang="name">Iustin-Alexandru Frățeanu</h1>
+    <nav>
+      <ul>
+        <li><a href="#about" data-lang="about">About</a></li>
+        <li><a href="#projects" data-lang="projects">Projects</a></li>
+        <li><a href="#skills" data-lang="skills">Skills</a></li>
+        <li><a href="#contact" data-lang="contact">Contact</a></li>
+        <!-- Language Selector -->
+        <li>
+          <select id="lang" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="ro">Română</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="it">Italiano</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Animation -->
+  <section id="hero">
+    <h2 data-lang="welcome">Welcome to My Portfolio</h2>
+    <p data-lang="intro">Hi, I'm Iustin-Alexandru Frățeanu, a programmer.</p>
+    <a href="#projects" class="btn" data-lang="view-work">View My Work</a>
+  </section>
+
+  <!-- 3D Object Section -->
+  <section id="threeD">
+    <canvas id="threeD-canvas"></canvas>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 data-lang="about">About Me</h2>
+    <p data-lang="about-text">I started programming at 14. My first language learned was <b>C# for Unity</b>, with which I made some basic games at the time. After that, at 15, I went to an informatics school, where I learned <b>C++</b>.<br>In highschool I went to a lot of competitions national and international, like the National Informatics Olympiad, or Cloudflight Coding Contest, or Codeforces contests.<br>After some time from starting C++, I made some basic project that you will find below and projects tat I made while I became more advanced in C++.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 data-lang="projects">Projects</h2>
+    <div class="project">
+      <h3 data-lang="project-title">Sudoku</h3>
+      <p data-lang="project-desc">This code can generate one of the solutions or the solution of a 9 x 9 sudoku grid.</p>
+      <a href="#" data-lang="view-project">View Project</a>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2 data-lang="skills">Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 data-lang="contact">Contact Me</h2>
+    <p>Email: your.email@example.com</p>
+    <p>Github: <a href="#">Your Github</a></p>
+    <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Iustin-Alexandru Frățeanu. <span data-lang="rights">All rights reserved.</span></p>
+  </footer>
+</body>
+</html>
