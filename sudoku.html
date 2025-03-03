@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="title">Sudoku Solver - Iustin-Alexandru Frățeanu</title>
+    <link rel="stylesheet" href="sudoku.css">
+    <script defer src="sudoku.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1 data-lang="name">Iustin-Alexandru Frățeanu</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-lang="home">Home</a></li>
+                <li><a href="#about" data-lang="about">About</a></li>
+                <li><a href="#contact" data-lang="contact">Contact</a></li>
+                <li>
+                    <select id="lang" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="ro">Română</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                        <option value="it">Italiano</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <h2 data-lang="welcome">Sudoku Solver</h2>
+        <p data-lang="intro">A Sudoku solver using a backtracking algorithm.</p>
+    </section>
+
+    <!-- DESCRIERE PROIECT -->
+    <section id="about">
+        <h2 data-lang="about-title">About this project</h2>
+        <p data-lang="about-text">This Sudoku Solver is written in C++ and runs locally using WebAssembly.</p>
+        <p data-lang="about-text2">The project demonstrates the efficiency of backtracking in solving combinatorial problems.</p>
+    </section>
+
+    <!-- SUDOKU INTERACTIV -->
+    <section id="sudoku">
+        <h2 data-lang="sudoku-title">Try the Sudoku Solver</h2>
+        <div id="sudoku-board">
+            <table>
+                <tbody>
+                    <script>
+                        for (let i = 0; i < 9; i++) {
+                            document.write('<tr>');
+                            for (let j = 0; j < 9; j++) {
+                                document.write(`<td><input id="cell-${i * 9 + j}" maxlength="1" /></td>`);
+                            }
+                            document.write('</tr>');
+                        }
+                    </script>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons-container">
+            <button id="generate-btn" data-lang="generate">Generate Sudoku</button>
+            <button id="solve-btn" data-lang="solve">Solve Sudoku</button>
+            <button id="clear-btn" data-lang="clear">Clear Board</button> <!-- Butonul Clear -->
+        </div>
+        
+    </section>
+
+    <!-- CODUL C++ -->
+    <section id="cpp-code">
+        <h2 data-lang="cpp-title">C++ source code</h2><br><br>
+        <pre>
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+ifstream fin("sudoku.in");
+ofstream fout("sudoku.out");
+
+int a[9][9];
+
+bool verif(int i, int j, int val) {
+    for (int k = 0; k < 9; k++) {
+        if (a[i][k] == val || a[k][j] == val) {
+            return false;
+        }
+    }
+
+    int k = i - (i % 3), l = j - (j % 3);
+    for (int p = 0; p < 3; p++) {
+        for (int q = 0; q < 3; q++) {
+            if (a[k+p][l+q] == val) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+bool solve(int i, int j) {
+    if (i == 8 && j == 9) {
+        return true;
+    } if (j == 9) {
+        return solve(i+1, 0);
+    } if (a[i][j] > 0) {
+        return solve(i, j+1);
+    }
+
+    for (int nr = 1; nr <= 9; nr++) {
+        if (verif(i, j, nr)) {
+            a[i][j] = nr;
+            if(solve(i, j+1)) {
+                return true;
+            }
+        }
+        a[i][j] = 0;
+    }
+
+    return false;
+}
+
+int main() {
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            fin >> a[i][j];
+        }
+    }
+
+    if (solve(0, 0)) {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                fout << a[i][j] << " ";
+            }
+            fout << "\n";
+        }
+    } else {
+        fout << "Cannot be completed.";
+    }
+
+    exit(0);
+}
+            
+        </pre>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p data-lang="footer">&copy; 2024 Iustin-Alexandru Frățeanu. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
