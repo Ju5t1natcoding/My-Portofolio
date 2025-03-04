@@ -190,3 +190,38 @@ function clearBoard() {
         cell.classList.remove("solved"); // Îndepărtează stilul de soluționare
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = Array.from(document.querySelectorAll("header, #hero, #about, #sudoku, #cpp-code, footer, #sudoku-board, .buttons-container"));
+
+    // Ascundem toate elementele inițial
+    elements.forEach(el => el.classList.add("hidden"));
+
+    // Amestecăm elementele pentru a le afișa într-o ordine aleatoare
+    function shuffleArray(array) {
+        return array.sort(() => Math.random() - 0.5);
+    }
+
+    const shuffledElements = shuffleArray(elements);
+
+    // Afișăm elementele treptat
+    shuffledElements.forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add("visible");
+        }, index * 300); // Fiecare element apare la interval de 300ms
+    });
+});
+
+function animateSolution(solution) {
+    solution.forEach((num, i) => {
+        setTimeout(() => {
+            const cell = document.getElementById(`cell-${i}`);
+            cell.value = num;
+            cell.classList.add("solved", "animate");
+
+            setTimeout(() => {
+                cell.classList.remove("animate");
+            }, 200);
+        }, i * 50);
+    });
+}
