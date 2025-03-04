@@ -110,6 +110,26 @@ button {
     justify-content: center;
 }
 
+/* Efect de animație pentru celulele rezolvate */
+.solved {
+    background-color: #d4edda; /* Verde deschis */
+    transition: background-color 0.5s ease, transform 0.2s ease;
+}
+
+.solved.animate {
+    transform: scale(1.1);
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* COD C++ */
 #cpp-code {
     background: #2b2b2b;
