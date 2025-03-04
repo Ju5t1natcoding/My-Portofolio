@@ -10,7 +10,7 @@
 <body>
 
     <!-- HEADER -->
-    <header>
+    <header class="fade-in">
         <h1 data-lang="name">Iustin-Alexandru Frățeanu</h1>
         <nav>
             <ul>
@@ -32,20 +32,20 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section id="hero">
+    <section id="hero" class="fade-in">
         <h2 data-lang="welcome">Sudoku Solver</h2>
         <p data-lang="intro">A Sudoku solver using a backtracking algorithm.</p>
     </section>
 
     <!-- DESCRIERE PROIECT -->
-    <section id="about">
+    <section id="about" class="fade-in">
         <h2 data-lang="about-title">About this project</h2>
         <p data-lang="about-text">This Sudoku Solver is written in C++ and runs locally using WebAssembly.</p>
         <p data-lang="about-text2">The project demonstrates the efficiency of backtracking in solving combinatorial problems.</p>
     </section>
 
     <!-- SUDOKU INTERACTIV -->
-    <section id="sudoku">
+    <section id="sudoku" class="fade-in">
         <h2 data-lang="sudoku-title">Try the Sudoku Solver</h2>
         <div id="sudoku-board">
             <table>
@@ -65,13 +65,12 @@
         <div class="buttons-container">
             <button id="generate-btn" data-lang="generate">Generate Sudoku</button>
             <button id="solve-btn" data-lang="solve">Solve Sudoku</button>
-            <button id="clear-btn" data-lang="clear">Clear Board</button> <!-- Butonul Clear -->
+            <button id="clear-btn" data-lang="clear">Clear Board</button>
         </div>
-        
     </section>
 
     <!-- CODUL C++ -->
-    <section id="cpp-code">
+    <section id="cpp-code" class="fade-in">
         <h2 data-lang="cpp-title">C++ source code</h2><br><br>
         <pre>
 #include &lt;bits/stdc++.h&gt;
@@ -143,12 +142,11 @@ int main() {
 
     exit(0);
 }
-            
         </pre>
     </section>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="fade-in">
         <p data-lang="footer">&copy; 2024 Iustin-Alexandru Frățeanu. All rights reserved.</p>
     </footer>
 
