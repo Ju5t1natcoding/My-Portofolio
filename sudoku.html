@@ -11,25 +11,27 @@
 
     <!-- HEADER -->
     <header class="fade-in">
-        <h1 data-lang="name">Iustin-Alexandru Frățeanu</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" data-lang="home">Home</a></li>
-                <li><a href="#about" data-lang="about">About</a></li>
-                <li><a href="#contact" data-lang="contact">Contact</a></li>
-                <li>
-                    <select id="lang" onchange="changeLanguage()">
-                        <option value="en">English</option>
-                        <option value="ro">Română</option>
-                        <option value="de">Deutsch</option>
-                        <option value="fr">Français</option>
-                        <option value="es">Español</option>
-                        <option value="it">Italiano</option>
-                    </select>
-                </li>
+        <div class="header-container">
+          <h1 data-lang="name">Iustin-Alexandru Frățeanu</h1>
+          <nav>
+            <ul class="nav-links">
+              <li><a href="index.html" data-lang="home">Home</a></li>
+              <li><a href="#about" data-lang="about">About</a></li>
+              <li><a href="#contact" data-lang="contact">Contact</a></li>
             </ul>
-        </nav>
-    </header>
+          </nav>
+          <div class="lang-selector">
+            <select id="lang" onchange="changeLanguage()">
+              <option value="en">English</option>
+              <option value="ro">Română</option>
+              <option value="de">Deutsch</option>
+              <option value="fr">Français</option>
+              <option value="es">Español</option>
+              <option value="it">Italiano</option>
+            </select>
+          </div>
+        </div>
+      </header>      
 
     <!-- HERO SECTION -->
     <section id="hero" class="fade-in">
