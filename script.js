@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
-  // Smooth Scroll for Navigation
-  const navLinks = document.querySelectorAll("nav ul li a");
-  navLinks.forEach(link => {
+  // Smooth Scroll for all anchor links that start with "#"
+  const scrollLinks = document.querySelectorAll("a[href^='#']");
+  scrollLinks.forEach(link => {
     link.addEventListener("click", function(e) {
       e.preventDefault();
       const targetId = this.getAttribute("href");
