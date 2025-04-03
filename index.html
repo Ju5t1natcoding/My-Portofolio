@@ -36,14 +36,14 @@
     </nav>
   </header>
 
-  <!-- Hero Section with Gradient Background -->
+  <!-- Hero Section with Gradient Background & Subtle Animation -->
   <section id="hero">
     <div class="hero-content">
       <h2 data-lang="welcome">Welcome to My Portfolio</h2>
-      <p data-lang="intro">Hi, I'm Iustin-Alexandru Frățeanu, a passionate programmer.</p>
+      <p data-lang="intro">Hi, I'm Iustin-Alexandru Frățeanu, a passionate programmer and the creator of this website.</p>
       <a href="#projects" class="btn" data-lang="view-work">View My Work</a>
     </div>
-    <!-- Optionally, puteți păstra canvas-ul pentru 3D -->
+    <!-- 3D Section -->
     <div id="threeD-container">
       <canvas id="threeD-canvas"></canvas>
     </div>
@@ -52,20 +52,23 @@
   <!-- About Section -->
   <section id="about">
     <h2 data-lang="about">About Me</h2>
-    <p data-lang="about-text">
-      I started programming at 13. My first language was <strong>C# for Unity</strong>, which helped me create basic games. Later, at 15, and I learned <strong>C++</strong> at the "Grigore Moisil" Theoretical High School of Informatics in Iași.
-    </p>
-    <p data-lang="about-text">
-      I have participated in various national and international competitions, such as the National Olympiad of Informatics, the National Olympiad of Informatics Acadnet, Cloudflight Coding Contest and many more. Below you can see my projects, from the beginning of my career to the advanced projects.
-    </p>
-  </section>
+    <div class="about-container">
+      <p data-lang="about-text">
+        I started programming at 13. My first language was <strong>C# for Unity</strong>, which helped me create basic games. Later, at 15, I learned <strong>C++</strong> at the "Grigore Moisil" Theoretical High School of Informatics in Iași.
+      </p>
+      <p data-lang="about-text">
+        I have participated in various national and international competitions, such as the National Olympiad of Informatics and Cloudflight Coding Contest. Below you can see my projects, from the beginning of my career to my advanced work.
+      </p>
+    </div>
+  </section>  
 
-  <!-- Projects Section with Interactive Cards -->
+  <!-- Projects Section with Interactive Cards & Dynamic Colors -->
   <section id="projects">
     <h2 data-lang="projects">Projects</h2>
     <div class="projects-container">
+      <!-- Exemplu proiect: Culoarea de bază pe card se setează inline -->
       <a href="sudoku.html">
-        <div class="project-card">
+        <div class="project-card" style="--project-color: #007bff;">
           <div class="card-inner">
             <div class="card-front">
               <h3 data-lang="project-title">Sudoku</h3>
@@ -78,7 +81,7 @@
           </div>
         </div>
       </a>
-      <!-- Alte carduri de proiecte pot fi adăugate aici -->
+      <!-- Alte carduri pot avea culori diferite, ex.: style="--project-color: #FF5722;" -->
     </div>
   </section>
   
