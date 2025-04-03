@@ -4,21 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iustin-Alexandru Frățeanu - Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Sticky Header with Navigation -->
   <header>
-    <h1 data-lang="name">Iustin-Alexandru Frățeanu</h1>
+    <div class="logo">
+      <h1>Iustin-Alexandru Frățeanu</h1>
+    </div>
     <nav>
       <ul>
         <li><a href="#about" data-lang="about">About</a></li>
         <li><a href="#projects" data-lang="projects">Projects</a></li>
         <li><a href="#skills" data-lang="skills">Skills</a></li>
         <li><a href="#contact" data-lang="contact">Contact</a></li>
-        <!-- Language Selector -->
         <li>
           <select id="lang" onchange="changeLanguage()">
             <option value="en">English</option>
@@ -33,27 +36,31 @@
     </nav>
   </header>
 
-  <!-- Hero Section with Animation -->
+  <!-- Hero Section with Gradient Background -->
   <section id="hero">
-    <h2 data-lang="welcome">Welcome to My Portfolio</h2>
-    <p data-lang="intro">Hi, I'm Iustin-Alexandru Frățeanu, a programmer.</p>
-    <a href="#projects" class="btn" data-lang="view-work">View My Work</a>
-  </section>
-
-  <!-- 3D Object Section -->
-  <section id="threeD">
-    <canvas id="threeD-canvas"></canvas>
+    <div class="hero-content">
+      <h2 data-lang="welcome">Welcome to My Portfolio</h2>
+      <p data-lang="intro">Hi, I'm Iustin-Alexandru Frățeanu, a passionate programmer.</p>
+      <a href="#projects" class="btn" data-lang="view-work">View My Work</a>
+    </div>
+    <!-- Optionally, puteți păstra canvas-ul pentru 3D -->
+    <div id="threeD-container">
+      <canvas id="threeD-canvas"></canvas>
+    </div>
   </section>
 
   <!-- About Section -->
   <section id="about">
     <h2 data-lang="about">About Me</h2>
-    <p data-lang="about-text">I started programming at 13. My first language learned was <b>C# for Unity</b>, with which I made some basic games at the time. After that, at 15, I went to the Teoretical Informatics Highschool "Grigore Moisil" Iași, where I learned <b>C++</b>.<br></p>
-    <p data-lang="about-text">In highschool I went to a lot of competitions national and international, like the National Informatics Olympiad or Cloudflight Coding Contest.<br></p>
-    <p data-lang="about-text">After some time from starting C++, I made some basic project that you will find below and projects that I made while I became more advanced.</p>
+    <p data-lang="about-text">
+      I started programming at 13. My first language was <strong>C# for Unity</strong>, which helped me create basic games. Later, at 15, am învățat <strong>C++</strong> la liceul "Grigore Moisil" din Iași.
+    </p>
+    <p data-lang="about-text">
+      Am participat la diverse competiții naționale și internaționale, precum Olimpiada Națională de Informatică. Mai jos puteți vedea proiectele mele, de la cele de început până la proiectele avansate.
+    </p>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects Section with Interactive Cards -->
   <section id="projects">
     <h2 data-lang="projects">Projects</h2>
     <div class="projects-container">
@@ -61,28 +68,29 @@
         <div class="project-card">
           <div class="card-inner">
             <div class="card-front">
-              <h3 data-lang="project-title">Sudoku</h3><br>
-              <p> - C++ - </p><br>
-              <p data-lang="project-desc">This code can generate one of the solutions or the solution of a 9 x 9 sudoku grid.</p>
+              <h3 data-lang="project-title">Sudoku</h3>
+              <p> - C++ - </p>
+              <p data-lang="project-desc">Generate a solution for a 9 x 9 sudoku grid.</p>
             </div>
             <div class="card-back">
               <p>Click to view project</p>
             </div>
           </div>
         </div>
-      </a>      
+      </a>
+      <!-- Alte carduri de proiecte pot fi adăugate aici -->
     </div>
   </section>
   
   <!-- Skills Section -->
   <section id="skills">
     <h2 data-lang="skills">Skills</h2>
-    <ul>
-      <li><b><i>C#</i></b></li>
-      <li><b><i>C++</i></b></li>
-      <li><b><i>HTML</i></b></li>
-      <li><b><i>CSS</i></b></li>
-      <li><b><i>JavaScript</i></b></li>
+    <ul class="skills-list">
+      <li><i>C#</i></li>
+      <li><i>C++</i></li>
+      <li><i>HTML</i></li>
+      <li><i>CSS</i></li>
+      <li><i>JavaScript</i></li>
     </ul>
   </section>
 
@@ -90,8 +98,8 @@
   <section id="contact">
     <h2 data-lang="contact">Contact Me</h2>
     <p>Email: your.email@example.com</p>
-    <p>Github: <a href="https://github.com/Ju5t1natcoding">Ju5t1natcoding</a></p>
-    <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
+    <p>Github: <a href="https://github.com/Ju5t1natcoding" target="_blank">Ju5t1natcoding</a></p>
+    <p>LinkedIn: <a href="#" target="_blank">Your LinkedIn</a></p>
   </section>
 
   <footer>
