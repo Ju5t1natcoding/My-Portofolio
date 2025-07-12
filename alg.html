@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-lang="title">Algorithm Illustrater - Iustin-Alexandru Frățeanu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="alg.css">
+  <script defer src="alg.js"></script>
+</head>
+<body>
+  <!-- Header with updated navigation -->
+  <header>
+    <div class="logo">
+      <h1>Iustin-Alexandru Frățeanu</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" data-lang="home">Home</a></li>
+        <li><a href="#about" data-lang="about">About</a></li>
+        <li><a href="#algorithms" data-lang="algorithms">Algorithms</a></li>
+        <li>
+          <select id="lang" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="ro">Română</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="it">Italiano</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h2 data-lang="hero-title">Algorithm Illustrater</h2>
+      <p data-lang="hero-desc">
+        Visualize your favorite algorithms in real-time and learn how they work step by step.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 data-lang="about-title">About the Project</h2>
+    <p data-lang="about-text">
+      This project is an interactive algorithm illustrater that helps you understand how different algorithms function through engaging visualizations.
+      Select an algorithm below to see its simulation in action.
+    </p>
+  </section>
+
+  <!-- Main Content: Algorithms Section -->
+  <main>
+    <section id="algorithms">
+      <h2 data-lang="algorithms-title">Available Algorithms</h2>
+      <div class="algorithm-cards">
+        <!-- Card: Merge Sort -->
+        <div class="algorithm-card" data-algorithm="Merge Sort">
+          <h3>Merge Sort</h3>
+          <p data-lang data-original="Visualize sorting by dividing and merging. ">
+            Visualize sorting by dividing and merging.
+          </p>
+          <button class="btn-run" data-lang="run">Run</button>
+        </div>
+        <!-- Card: Quick Sort -->
+        <div class="algorithm-card" data-algorithm="Quick Sort">
+          <h3>Quick Sort</h3>
+          <p data-lang data-original="See fast sorting using pivot and partitioning.">
+            See fast sorting using pivot and partitioning.
+          </p>
+          <button class="btn-run" data-lang="run">Run</button>
+        </div>
+        <!-- Card: BFS (placeholder) -->
+        <div class="algorithm-card" data-algorithm="BFS">
+          <h3>BFS</h3>
+          <p data-lang data-original="Explore graphs using breadth-first search. ">
+            Explore graphs using breadth-first search.
+          </p>
+          <button class="btn-run" data-lang="run">Run</button>
+        </div>
+        <!-- Card: DFS (placeholder) -->
+        <div class="algorithm-card" data-algorithm="DFS">
+          <h3>DFS</h3>
+          <p data-lang data-original="Explore graphs using depth-first search. ">
+            Explore graphs using depth-first search.
+          </p>
+          <button class="btn-run" data-lang="run">Run</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visualization Area -->
+    <section id="visualization">
+      <h2 data-lang="visualization-title">Visualization</h2>
+      <div id="visualization-area">
+        <!-- Simulation will be displayed here -->
+      </div>
+      <div id="simulation-result" data-lang="simulation result">
+        <!-- Mesajul final va apărea aici, sub vector -->
+      </div>
+      <!-- Code Display Area -->
+      <div id="code-area">
+        <div id="code-lang-buttons">
+          <button class="code-lang-btn" data-lang-key="cpp">C++</button>
+          <button class="code-lang-btn" data-lang-key="cs">C#</button>
+          <button class="code-lang-btn" data-lang-key="js">JS</button>
+        </div>
+        <pre id="code-display"><code></code></pre>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Iustin-Alexandru Frățeanu. <span data-lang="rights">All rights reserved.</span></p>
+  </footer>
+</body>
+</html>
