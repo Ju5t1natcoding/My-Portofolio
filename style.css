@@ -253,3 +253,8 @@ footer {
 .about-container {
   clip-path: ellipse(150% 60% at 50% 50%);
 }
+
+.diploma {
+  width: 550px;
+  height: auto;
+}
