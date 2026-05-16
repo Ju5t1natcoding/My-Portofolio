@@ -1,3 +1,6 @@
+///anul - pt footer
+document.getElementById('year').textContent = new Date().getFullYear();
+
 document.addEventListener("DOMContentLoaded", async function() {
   // Smooth Scroll for all anchor links that start with "#"
   const scrollLinks = document.querySelectorAll("a[href^='#']");
