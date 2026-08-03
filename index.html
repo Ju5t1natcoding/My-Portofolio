@@ -3,439 +3,847 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iustin-Alexandru Frățeanu - Portfolio</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Iustin-Alexandru Frățeanu — competitive programmer and software engineering portfolio.">
+  <title>Iustin-Alexandru Frățeanu — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
   <script defer src="script.js"></script>
+  <script defer src="portfolio-enhancements.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-  <!-- Sticky Header with Navigation -->
-  <header>
-    <div class="logo">
-      <h1>Iustin-Alexandru Frățeanu</h1>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="cursor-spotlight" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#hero" aria-label="Back to top">
+        <span class="brand-mark">IAF</span>
+        <span class="brand-copy">
+          <strong>Iustin-Alexandru Frățeanu</strong>
+          <small>Developer Portfolio</small>
+        </span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#featured-projects">Featured Work</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#about" data-lang="about">About</a></li>
-        <li><a href="#projects" data-lang="projects">Projects</a></li>
-        <li><a href="#achievements" data-lang="achievements">Achievements</a></li>
-        <li><a href="#skills" data-lang="skills">Skills</a></li>
-        <li><a href="#contact" data-lang="contact">Contact</a></li>
-        <li>
-          <select id="lang" onchange="changeLanguage()">
-            <option value="en">English</option>
-            <option value="ro">Română</option>
-            <option value="de">Deutsch</option>
-            <option value="fr">Français</option>
-            <option value="es">Español</option>
-            <option value="it">Italiano</option>
-          </select>
-        </li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- Hero Section with Gradient Background & Subtle Animation -->
-  <section id="hero">
-    <div class="hero-content">
-      <h2 data-lang="welcome">Welcome to My Portfolio</h2>
-      <p data-lang="intro">Hi, I'm Iustin-Alexandru Frățeanu, a passionate programmer and the creator of this website.</p>
-      <a href="#projects" class="btn" data-lang="view-work">View My Work</a>
-    </div>
-    <!-- 3D Section -->
-    <div id="threeD-container">
-      <canvas id="threeD-canvas"></canvas>
-    </div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> Competitive Programming · Software Engineering · Systems</div>
+          <h1>Building software with the mindset of an engineer, not just a coder.</h1>
+          <p class="hero-lead">
+            Hi, I'm <strong>Iustin-Alexandru Frățeanu</strong>. I enjoy turning difficult technical problems into working systems — from algorithms and low-level C++ projects to full-stack applications built with real teams.
+          </p>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2 data-lang="about">About Me</h2>
-    <div class="about-container">
-      <p data-lang="about-text">
-        I started programming at 13. My first language was <strong>C# for Unity</strong>, which helped me create basic games. Later, at 15, I learned <strong>C++</strong> at the "Grigore Moisil" Theoretical High School of Informatics in Iași.
-      </p>
-      <p data-lang="about-text">
-        I have participated in various national and international competitions, such as the National Olympiad of Applied Informatics and Cloudflight Coding Contest. Below you can see my projects, from the beginning of my journey to my advanced work, and my achievements.
-      </p>
-    </div>
-  </section>  
+          <div class="hero-actions">
+            <a href="#featured-projects" class="btn btn-primary">Explore flagship work</a>
+            <a href="https://github.com/Ju5t1natcoding" class="btn btn-secondary" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
 
-  <!-- Projects Section with Interactive Cards & Dynamic Colors -->
-  <section id="projects">
-    <h2 data-lang="projects">Projects</h2>
-    <br>
-    <br>
-    <h3 data-lang="projects"><u><i>Made in highschool</i></u></h3><br>
-    <div class="projects-container">
-      <a href="https://ju5t1natcoding.itch.io/chemquest">
-        <div class="project-card" style="--project-color: #9B4F96;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">ChemQuest</h3>
-              <p> - C# (Unity) - </p>
-              <p data-lang="project-desc">This is an educational game that had been presented in the Trandisciplinary Contest InfoChim 2024. It has received 3rd prize.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view game</p>
-            </div>
+          <div class="hero-stack" aria-label="Core technologies">
+            <span>C++</span>
+            <span>C#</span>
+            <span>Python</span>
+            <span>Dart</span>
+            <span>Flutter</span>
+            <span>JavaScript</span>
+            <span>Algorithms</span>
           </div>
         </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/-Homemade-Password-Manager-with-cpp17-">
-        <div class="project-card" style="--project-color: #00897B;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">Password Manager and Generator</h3>
-              <p> - C++ - </p>
-              <p data-lang="project-desc">A local password manager (structured as a local database) and generator that runs on a console application.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on Github</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/Web-Scraper-GUI">
-        <div class="project-card" style="--project-color: #3776AB;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">Web Scraper</h3>
-              <p> - Python - </p>
-              <p data-lang="project-desc">The application automatically extracts content from web pages, saves it in SQLite, and displays it in an interactive graphical interface that is updated periodically.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on Github</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/Leaderboard-Manager-with-cpp17">
-        <div class="project-card" style="--project-color: #00897B;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">Leaderboard Manager</h3>
-              <p> - C++ - </p>
-              <p data-lang="project-desc">A local leaderboard manager that runs as a console application that is used as a helper for those that need to save externally their leaderboards. It uses Fenwick Trees for optimization.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on Github</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/Basic-Cache-Simulator-in-CPP-17">
-        <div class="project-card" style="--project-color: #00599C;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">Basic Cache Simulator</h3>
-              <p> - C++ - </p>
-              <p data-lang="project-desc">A local cache simulator that runs as a console application that is used as a helper for those that want to see how a cache operates.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on Github</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/Simple-Mini-Search-Engine-in-cpp17">
-        <div class="project-card" style="--project-color: #00599C;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">Simple Mini Search Engine</h3>
-              <p> - C++ - </p>
-              <p data-lang="project-desc">A local search engine that runs as a console application and allows users to search for specific terms within a collection of documents.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on Github</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/Random-Number-Generator">
-        <div class="project-card" style="--project-color: #00599C;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">Random Number Generator on numbers with 256 bits</h3>
-              <p> - C++ - </p>
-              <p data-lang="project-desc">A custom C++ PRNG implementation supporting 32, 64, 128, and 256-bit output, built on a seed-based hashing pipeline with mixing constants.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on Github</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/Huffman-File-Compressor">
-        <div class="project-card" style="--project-color: #00599C;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">Huffman File Compressor</h3>
-              <p> - C++ - </p>
-              <p data-lang="project-desc">A simple file compression and decompression tool implemented in C++ using the Huffman coding algorithm.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on Github</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://codebeyondmath.github.io/Code-Beyond-Math/">
-        <div class="project-card" style="--project-color: #E34F26;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">Code Beyond Math</h3>
-              <p> - HTML, CSS and JS - </p>
-              <p data-lang="project-desc">A work-in-progress educational platform exploring computer science and mathematics through interactive explanations and practical examples.<br>(Co-author: Caunic Rareș-Octavian)</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/Mini-Database">
-        <div class="project-card" style="--project-color: #00897B;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">Mini Database</h3>
-              <p> - C++ - </p>
-              <p data-lang="project-desc">A C++17 console-based database management system inspired by SQLite, supporting CREATE, INSERT, SELECT, DELETE and DROP operations with WHERE clause filtering, persistent file storage, and a custom query parser.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on GitHub</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/Git-like-Version-Control-System">
-        <div class="project-card" style="--project-color: #00897B;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">Git-like Version Control System</h3>
-              <p> - C++ - </p>
-              <p data-lang="project-desc">A C++17 console-based version control system inspired by Git, implementing core operations such as staging, committing, history tracking, status checking, and line-by-line diff comparison using the LCS algorithm.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on GitHub</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/HTTP-Server">
-        <div class="project-card" style="--project-color: #00599C;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">HTTP Server</h3>
-              <p> - C++ - </p>
-              <p data-lang="project-desc">A lightweight HTTP/1.1 server built from scratch in C++17, featuring custom routing, static file serving, and a thread pool for parallel request handling.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on Github</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/Ju5t1natcoding/QuantumAtom">
-        <div class="project-card" style="--project-color: #6A1B9A;">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3 data-lang="project-title">QuantumAtom</h3>
-              <p> - C++ - </p>
-              <p data-lang="project-desc">A real-time 3D visualizer of quantum atomic orbitals built in C++17 with SFML, featuring electron probability clouds, multi-atom support, and background threading.</p>
-            </div>
-            <div class="card-back">
-              <p>Click to view project on Github</p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
 
-  <!-- Achievements Section -->
-   <section id="achievements">
-    <h2 data-lang="achievements">Achievements</h2>
-    <br>
-    <div class="achievements-container">
-      <h3><strong>2023 - 2024</strong></h3>
-      <ul>
-        <p>
-          <strong>County Stage of the National Olympiad in Informatics</strong> - Got 3rd prize with a score of 137/300 points
-        </p>
-        <p>
-          <img src="./assets/diplomaOJI2024.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>Cloudflight Coding Contest</strong> - Participated for the 39th Round Classic Edition
-        </p><br>
-        <p>
-          <strong>The Regional Trandisciplinary Competition "InfoChim"</strong> - Got 3rd prize
-        </p>
-        <p>
-          <img src="./assets/diplomaInfoChim2024.png" alt="_blank" class="diploma">
-        </p><br>
-      </ul>
-      <br>
-      <br>
-      <h3><strong>2024 - 2025</strong></h3>
-      <ul>
-        <p>
-          <strong>County Stage of the National Olympiad in Informatics</strong> - Received a mention with a score of 112.5/300 points
-        </p>
-        <p>
-          <img src="./assets/diplomaOJI2025.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>Cloudflight Coding Contest</strong> - Got 7th place in Iași for the 40th Round School Edition
-        </p><br>
-        <p>
-          <strong>Cloudflight Coding Contest</strong> - Got 12th place in Iași for the 40th Round Classic Edition
-        </p><br>
-        <p>
-          <strong>Olympiad of Applied Informatics AcadNet</strong> - Participated in the nationals
-        </p>
-        <p>
-          <img src="./assets/diplomaAcadNet2025.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>RAU-Coder National Contest</strong> - Got 17th place and a Diploma of Merit (<a href="https://devhack.rau.ro/2025_clasament.html" target="_blank">Leaderboard</a>)
-        </p>
-        <p>
-          <img src="./assets/diplomaRAU-Coder2025.png" alt="_blank" class="diploma">
-        </p>
-      </ul>
-      <br>
-      <br>
-      <h3><strong>2025 - 2026</strong></h3>
-      <ul>
-        <p>
-          <strong>JetBrains's Bug Contest 2025</strong> - Got 9th place in Iași and 19th place nationally (<a href="https://youthcodingcup.com/leaderboard" target="_blank">Leaderboard</a>)
-        </p>
-        <p>
-          <img src="./assets/diplomaBugContest2025.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>JetBrains Academy Youth Challenge</strong> - Got 93th place overall internationally
-        </p>
-        <p>
-          <img src="./assets/diplomaAYC2025.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>IIOT 2025-2026 Round I (Team: SIGKILLers - me, <a href="https://github.com/stefan-nica24">Ștefan Nica</a>, Paul Ciumandru and Caunic Rareș-Octavian)</strong> - Got 6th place in Iași with a score of 261/700 points
-        </p><br>
-        <p>
-          <strong>AMC 12B 2025</strong> - Participated and got a score of 7 out of 25
-        </p><br>
-        <p>
-          <strong>Cloudflight Coding Contest</strong> - Got 7th place in Iași for the 41st Round School Edition
-        </p>
-        <p>
-          <img src="./assets/diplomaCloudflight41School.png" alt="_blank"  class="diploma">
-        <p><br>
-          <strong>Cloudflight Coding Contest</strong> - Got 10th place in Iași for the 41st Round Classic Edition
-        </p>
-        <p>
-          <img src="./assets/diplomaCloudflight41ClassicEu.png" alt="_blank"  class="diploma">
-          <img src="./assets/diplomaCloudflight41ClassicEchipa.png" alt="_blank"  class="diploma">
-        <p><br>
-          <strong>IIOT 2025-2026 Round II (Team: SIGKILLers - me, <a href="https://github.com/stefan-nica24">Ștefan Nica</a>, Paul Ciumandru and Caunic Rareș-Octavian)</strong> - Got a score of 207/700 points, getting us into 7th place in Iași with a total score of 468 points
-        </p><br>
-        <p>
-          <strong>IIOT 2025-2026 Round III (Team: SIGKILLers - me, <a href="https://github.com/stefan-nica24">Ștefan Nica</a>, Paul Ciumandru and Caunic Rareș-Octavian)</strong> - Got a score of 219/700 points, getting us into 6th place in Iași with a total score of 687 points
-        </p><br>
-        <p>
-          <strong>Moisil++ 2026</strong> - Got 2nd place
-        </p>
-        <p>
-          <img src="./assets/diploma_Moisil++.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>Awarded the title “Ambassador of Excellence in Informatics” by "Grigore Moisil" Theoretical High School of Informatics in Iași for outstanding performance in computer science</strong>
-        </p>
-        <p>
-          <img src="./assets/Ambasador_al_Informaticii.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>ACTS Online 2026</strong> - Participated in the online camp organised by JetBrains, Constructor University and Neapolis University Pafos
-        </p><br>
-        <p>
-          <strong>IIOT 2025-2026 Round IV (Team: SIGKILLers - me, <a href="https://github.com/stefan-nica24">Ștefan Nica</a>, Paul Ciumandru and Caunic Rareș-Octavian)</strong> - Got a score of 114/700 points, getting us into 6th place in Iași with a total score of 801 points
-        </p><br>
-        <p>
-          <strong>County Stage of the National Olympiad in Informatics</strong> - Got a mention with a score of 192/300 points
-        </p><br>
-        <p>
-          <strong>InfoGym Final Round</strong> - Got 2nd place in 11th grade (<a href="https://www.facebook.com/photo/?fbid=1553354986791820&set=pcb.1553358723458113" target="_blank">Leaderboard</a>)
-        </p>
-        <p>
-          <img src="./assets/poza_grup_infogym_2026.png" alt="_blank" class="diploma">
-          <img src="./assets/medalie+diploma_infogym_2026.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>FIICode Qualifying Round</strong> - Got 7th place overall and qualified for the final round (<a href="https://kilonova.ro/contests/3060/leaderboard" target="blank">Leaderboard</a>)
-        </p><br>
-        <p>
-          <strong>ITMarathon Junior Dev Challenge</strong> - Got 3rd place
-        </p>
-        <p>
-          <img src="./assets/poza_grup_itmjd_2026.png" alt="_blank" class="diploma">
-          <img src="./assets/poza_diploma_itmjd_2026.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>Got invited to the Software Engineering track of the <a href="https://www.linkedin.com/school/acts-programming-camp" target="blank">ACTS 2026.2</a> in Germany!</strong>
-        </p>
-        <p>
-          <img src="./assets/Excited to join ACTS 2026.2.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>FIICode FInal Round</strong> - Got 8th place (<a href="https://kilonova.ro/contests/3146/leaderboard">Leaderboard</a>)
-        </p>
-        <p>
-          <img src="./assets/diploma_finala_fiicode_2026.png" alt="_blank" class="diploma">
-        </p><br>
-        <p>
-          <strong>ISCPC 2026</strong> - Got 7th place (<a href="https://vjudge.net/contest/818490#rank">Leaderboard</a>)<br>
-          <strong>TEAM: UAIC_SmenuSnickr</strong><br>
-          <strong>MEMBERS: Frățeanu Iustin-Alexandru (me), <a href="https://github.com/stefan-nica24">Ștefan Nica</a>, Gabără Sorin-Gabriel</strong>
-        </p>
-        <p>
-          <img src="./assets/poza_echipa_iscpc2026.png" alt="_blank" class="diploma">
-        </p>
-        <br>
-        <br>
-        <p>
-          <strong>To be continued...</strong>
-        </p>
-      </ul>
-    </div>
-  </section>
-  
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2 data-lang="skills">Skills</h2>
-    <ul class="skills-list">
-      <li><i>C#</i></li>
-      <li><i>C++</i></li>
-      <li><i>HTML</i></li>
-      <li><i>CSS</i></li>
-      <li><i>JavaScript</i></li>
-      <li><i>Python</i></li>
-    </ul>
-  </section>
+        <div class="hero-visual">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="hero-terminal">
+            <div class="terminal-bar">
+              <span></span><span></span><span></span>
+              <small>~/portfolio</small>
+            </div>
+            <div class="terminal-body">
+              <p><span class="terminal-green">$</span> whoami</p>
+              <p class="terminal-muted">iustin.alexandru.frateanu</p>
+              <p><span class="terminal-green">$</span> focus --list</p>
+              <p class="terminal-code">competitive_programming</p>
+              <p class="terminal-code">software_engineering</p>
+              <p class="terminal-code">systems_and_architecture</p>
+              <p><span class="terminal-green">$</span> status</p>
+              <p class="terminal-muted">building, learning, shipping.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2 data-lang="contact">Contact Me</h2>
-    <p>Email: frateanuiustinalexandru@yahoo.com</p>
-    <p>Github: <a href="https://github.com/Ju5t1natcoding" target="_blank">Ju5t1natcoding</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/fr%C4%83%C8%9Beanu-iustin-alexandru-682263354/" target="_blank">Frățeanu Iustin-Alexandru</a></p>
-  </section>
+      <div id="threeD-container" class="threeD-shell">
+        <canvas id="threeD-canvas"></canvas>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">01 · Background</span>
+          <h2>About Me</h2>
+          <p>A progression from learning how code works to building systems that have to work together.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card about-story">
+            <p>
+              I started programming at 13. My first language was <strong>C# for Unity</strong>, which gave me an early introduction to building interactive software. Later, at 15, I learned <strong>C++</strong> at the "Grigore Moisil" Theoretical High School of Informatics in Iași.
+            </p>
+            <p>
+              Since then, my interests have expanded toward competitive programming, algorithms, systems programming and full-stack development. I especially enjoy projects where the interesting part is not just writing code, but designing the pieces so that they work together reliably.
+            </p>
+          </div>
+
+          <div class="about-milestones">
+            <div class="milestone">
+              <span class="milestone-line"></span>
+              <div>
+                <strong>Started programming</strong>
+                <p>Early experimentation with C# and Unity.</p>
+              </div>
+            </div>
+            <div class="milestone">
+              <span class="milestone-line"></span>
+              <div>
+                <strong>Competitive programming</strong>
+                <p>Deepened algorithmic thinking through olympiads and contests.</p>
+              </div>
+            </div>
+            <div class="milestone">
+              <span class="milestone-line"></span>
+              <div>
+                <strong>Software engineering</strong>
+                <p>Moved toward databases, networking, APIs, architecture and distributed components.</p>
+              </div>
+            </div>
+            <div class="milestone">
+              <span class="milestone-line"></span>
+              <div>
+                <strong>ACTS 2026.2</strong>
+                <p>Worked in a team on a production-oriented cross-platform messenger.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLAGSHIP PROJECTS -->
+    <section id="featured-projects" class="section">
+      <div class="container">
+        <div class="section-heading section-heading-left">
+          <span class="section-kicker">02 · Featured Engineering Work</span>
+        </div>
+
+        <!-- FEATURED ACTS PROJECT -->
+        <article class="flagship-project reveal-on-scroll" data-tilt-soft>
+          <div class="flagship-main">
+            <div class="flagship-badge">FEATURED PROJECT · ACTS 2026.2</div>
+            <h3>Untitled Messenger</h3>
+            <p class="flagship-subtitle">A team-built cross-platform messaging application developed during ACTS 2026.2.</p>
+            <p class="flagship-description">
+              Built during ACTS 2026.2, this project represents the biggest step in my portfolio toward collaborative software engineering. My contribution focused on the mobile client, built with <strong>Flutter and Dart</strong>, where I worked on the application experience and the mobile side of the product alongside the rest of the team.
+            </p>
+
+            <div class="tag-row">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>Cross-platform mobile</span>
+              <span>Team development</span>
+              <span>Real-time UX</span>
+              <span>ACTS 2026.2</span>
+            </div>
+
+            <div class="flagship-highlights">
+              <div class="highlight-item">
+                <strong>My contribution</strong>
+                <p>Focused on the mobile application layer and the user-facing product experience.</p>
+              </div>
+              <div class="highlight-item">
+                <strong>Technology</strong>
+                <p>Flutter and Dart were the core technologies used for my part of the project.</p>
+              </div>
+              <div class="highlight-item">
+                <strong>Team environment</strong>
+                <p>Worked within a larger engineering team where different parts of the product had to come together.</p>
+              </div>
+              <div class="highlight-item">
+                <strong>Why it matters</strong>
+                <p>A move from standalone experiments toward building software as part of a real collaborative development workflow.</p>
+              </div>
+            </div>
+
+            <div class="flagship-actions">
+              <a href="https://github.com/acts-se-2026/messenger" class="btn btn-primary" target="_blank" rel="noopener">View repository ↗</a>
+              <span class="contribution-note">My role: Mobile Development · Flutter · Dart</span>
+            </div>
+          </div>
+
+          <div class="flagship-aside">
+            <div class="presentation-stage">
+              <div class="presentation-orbit presentation-orbit-a" aria-hidden="true"></div>
+              <div class="presentation-orbit presentation-orbit-b" aria-hidden="true"></div>
+
+              <div class="presentation-frame">
+                <div class="presentation-frame-top">
+                  <span class="presentation-status"><span class="status-dot"></span> REAL EVENT PHOTO</span>
+                  <span class="presentation-location">ACTS 2026.2</span>
+                </div>
+
+                <div class="proof-gallery flagship-photo-gallery" data-gallery="acts-presentation">
+                  <button class="proof-thumb flagship-photo-thumb" type="button" data-caption="Final project presentation at ACTS 2026.2 — authentic event photo from the team presentation.">
+                    <img src="./assets/acts-final-presentation.png" alt="Final project presentation at ACTS 2026.2" loading="lazy">
+                  </button>
+                </div>
+
+                <div class="presentation-caption">
+                  <strong>Final project presentation</strong>
+                  <span>A real moment from the ACTS 2026.2 team presentation.</span>
+                </div>
+              </div>
+
+              <div class="device-chip chip-top">TEAM PROJECT</div>
+              <div class="device-chip chip-bottom">FLUTTER · DART</div>
+            </div>
+
+            <div class="project-snapshot">
+              <span class="section-kicker">Project snapshot</span>
+              <div class="snapshot-grid">
+                <div><small>Context</small><strong>ACTS 2026.2</strong></div>
+                <div><small>Role</small><strong>Mobile Developer</strong></div>
+                <div><small>Stack</small><strong>Flutter · Dart</strong></div>
+                <div><small>Format</small><strong>Team Project</strong></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- OTHER MAJOR PROJECTS -->
+        <div class="subsection-heading">
+          <span class="section-kicker">02.2 · Major Personal Projects</span>
+        </div>
+
+        <div class="major-project-grid">
+          <a class="major-project-card reveal-on-scroll" data-tilt-soft href="https://github.com/Ju5t1natcoding/HTTP-Server" target="_blank" rel="noopener">
+            <div class="major-project-top">
+              <span class="project-index">01</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>HTTP Server</h3>
+            <p>Lightweight HTTP/1.1 server implemented from scratch in C++17 with custom routing, static file serving and a thread pool for parallel request handling.</p>
+            <div class="major-project-footer"><span>C++17</span><span>Networking</span><span>Concurrency</span></div>
+          </a>
+
+          <a class="major-project-card reveal-on-scroll" data-tilt-soft href="https://github.com/Ju5t1natcoding/Git-like-Version-Control-System" target="_blank" rel="noopener">
+            <div class="major-project-top">
+              <span class="project-index">02</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>Git-like Version Control System</h3>
+            <p>A C++17 console-based VCS inspired by Git, implementing staging, commits, history tracking, status checks and line-by-line diff comparison using LCS.</p>
+            <div class="major-project-footer"><span>C++17</span><span>Algorithms</span><span>File systems</span></div>
+          </a>
+
+          <a class="major-project-card reveal-on-scroll" data-tilt-soft href="https://github.com/Ju5t1natcoding/Mini-Database" target="_blank" rel="noopener">
+            <div class="major-project-top">
+              <span class="project-index">03</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>Mini Database</h3>
+            <p>A C++17 database management system inspired by SQLite, with a custom query parser, persistent storage and operations such as CREATE, INSERT, SELECT, DELETE and DROP.</p>
+            <div class="major-project-footer"><span>C++17</span><span>Databases</span><span>Parsing</span></div>
+          </a>
+
+          <a class="major-project-card reveal-on-scroll" data-tilt-soft href="https://github.com/Ju5t1natcoding/QuantumAtom" target="_blank" rel="noopener">
+            <div class="major-project-top">
+              <span class="project-index">04</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>QuantumAtom</h3>
+            <p>A real-time 3D visualizer of quantum atomic orbitals built in C++17 with SFML, featuring electron probability clouds, multi-atom support and background threading.</p>
+            <div class="major-project-footer"><span>C++17</span><span>SFML</span><span>Multithreading</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SMALLER PROJECTS / FLIP CARDS -->
+    <section id="projects" class="section section-soft">
+      <div class="container">
+        <div class="section-heading section-heading-left">
+          <span class="section-kicker">03 · Project Archive</span>
+        </div>
+
+        <div class="projects-grid">
+          <a href="https://ju5t1natcoding.itch.io/chemquest" class="project-card" style="--project-color: #9B4F96;">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-type">EDUCATIONAL GAME</span>
+                <h3>ChemQuest</h3>
+                <p class="project-tech">C# · Unity</p>
+                <p>An educational game presented in the Trandisciplinary Contest InfoChim 2024, where it received 3rd prize.</p>
+              </div>
+              <div class="card-back"><span>Open project ↗</span></div>
+            </div>
+          </a>
+
+          <a href="https://github.com/Ju5t1natcoding/-Homemade-Password-Manager-with-cpp17-" class="project-card" style="--project-color: #00897B;">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-type">SECURITY TOOL</span>
+                <h3>Password Manager & Generator</h3>
+                <p class="project-tech">C++17</p>
+                <p>A local password manager and generator structured as a small local database and built as a console application.</p>
+              </div>
+              <div class="card-back"><span>Open GitHub ↗</span></div>
+            </div>
+          </a>
+
+          <a href="https://github.com/Ju5t1natcoding/Web-Scraper-GUI" class="project-card" style="--project-color: #3776AB;">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-type">AUTOMATION</span>
+                <h3>Web Scraper</h3>
+                <p class="project-tech">Python · SQLite</p>
+                <p>Automatically extracts web content, stores it in SQLite and presents it through an interactive graphical interface.</p>
+              </div>
+              <div class="card-back"><span>Open GitHub ↗</span></div>
+            </div>
+          </a>
+
+          <a href="https://github.com/Ju5t1natcoding/Leaderboard-Manager-with-cpp17" class="project-card" style="--project-color: #00897B;">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-type">DATA STRUCTURES</span>
+                <h3>Leaderboard Manager</h3>
+                <p class="project-tech">C++17 · Fenwick Tree</p>
+                <p>A local leaderboard manager designed as a helper tool for maintaining external rankings efficiently.</p>
+              </div>
+              <div class="card-back"><span>Open GitHub ↗</span></div>
+            </div>
+          </a>
+
+          <a href="https://github.com/Ju5t1natcoding/Basic-Cache-Simulator-in-CPP-17" class="project-card" style="--project-color: #00599C;">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-type">SYSTEMS</span>
+                <h3>Basic Cache Simulator</h3>
+                <p class="project-tech">C++17</p>
+                <p>A small local simulator designed to help visualize how cache behaviour works through a focused implementation.</p>
+              </div>
+              <div class="card-back"><span>Open GitHub ↗</span></div>
+            </div>
+          </a>
+
+          <a href="https://github.com/Ju5t1natcoding/Simple-Mini-Search-Engine-in-cpp17" class="project-card" style="--project-color: #00599C;">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-type">INFORMATION RETRIEVAL</span>
+                <h3>Simple Mini Search Engine</h3>
+                <p class="project-tech">C++17</p>
+                <p>A local search engine that lets users query terms across a collection of documents.</p>
+              </div>
+              <div class="card-back"><span>Open GitHub ↗</span></div>
+            </div>
+          </a>
+
+          <a href="https://github.com/Ju5t1natcoding/Random-Number-Generator" class="project-card" style="--project-color: #00599C;">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-type">ALGORITHMS</span>
+                <h3>Random Number Generator</h3>
+                <p class="project-tech">C++17 · 256-bit output</p>
+                <p>A custom PRNG implementation supporting 32, 64, 128 and 256-bit output through a seed-based hashing and mixing pipeline.</p>
+              </div>
+              <div class="card-back"><span>Open GitHub ↗</span></div>
+            </div>
+          </a>
+
+          <a href="https://github.com/Ju5t1natcoding/Huffman-File-Compressor" class="project-card" style="--project-color: #00599C;">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-type">COMPRESSION</span>
+                <h3>Huffman File Compressor</h3>
+                <p class="project-tech">C++17</p>
+                <p>A file compression and decompression tool built around the Huffman coding algorithm.</p>
+              </div>
+              <div class="card-back"><span>Open GitHub ↗</span></div>
+            </div>
+          </a>
+
+          <a href="https://codebeyondmath.github.io/Code-Beyond-Math/" class="project-card" style="--project-color: #E34F26;">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-type">EDUCATIONAL PLATFORM</span>
+                <h3>Code Beyond Math</h3>
+                <p class="project-tech">HTML · CSS · JavaScript</p>
+                <p>A work-in-progress platform exploring computer science and mathematics through interactive explanations and practical examples.</p>
+                <small>Co-author: Caunic Rareș-Octavian</small>
+              </div>
+              <div class="card-back"><span>Open project ↗</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-heading section-heading-left">
+          <span class="section-kicker">04 · Competitive Track Record</span>
+          <h2>Achievements</h2>
+          <p>Selected highlights first, followed by the complete chronological record. Every certificate or photo is attached to the achievement it belongs to.</p>
+        </div>
+
+        <div class="achievement-feature-grid">
+          <article class="achievement-feature achievement-feature-accent reveal-on-scroll" data-tilt-soft>
+            <span class="achievement-label">FEATURED ACHIEVEMENT</span>
+            <h3>ACTS 2026.2 · Software Engineering Track</h3>
+            <p>Invited to the Software Engineering track in Germany and contributed to a team-built mobile application using Flutter and Dart.</p>
+          </article>
+          <article class="achievement-feature reveal-on-scroll" data-tilt-soft>
+            <span class="achievement-label">COMPETITION RESULT</span>
+            <h3>3rd Place · ITMarathon Junior Dev Challenge</h3>
+            <p>A podium finish in a junior development competition, supported by both a team photo and a diploma.</p>
+          </article>
+          <article class="achievement-feature reveal-on-scroll" data-tilt-soft>
+            <span class="achievement-label">NATIONAL RESULT</span>
+            <h3>17th Place · RAU-Coder National Contest</h3>
+            <p>Finished 17th nationally and received a Diploma of Merit.</p>
+          </article>
+          <article class="achievement-feature reveal-on-scroll" data-tilt-soft>
+            <span class="achievement-label">RECOGNITION</span>
+            <h3>Ambassador of Excellence in Informatics</h3>
+            <p>Awarded by the "Grigore Moisil" Theoretical High School of Informatics in Iași for outstanding performance in computer science.</p>
+          </article>
+        </div>
+
+        <div class="achievement-timeline">
+          <div class="timeline-year reveal-on-scroll">
+            <div class="timeline-marker">23–24</div>
+            <div class="timeline-content">
+              <h3>2023 – 2024</h3>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>County Stage of the National Olympiad in Informatics</strong></div>
+                <div class="achievement-result"><span>3rd prize · 137/300 points</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+                <details class="proof-details">
+                  <summary>View certificate</summary>
+                  <div class="proof-gallery" data-gallery="oji-2024">
+                    <button class="proof-thumb" type="button" data-caption="National Olympiad in Informatics — County Stage, 2024">
+                      <img src="./assets/diplomaOJI2024.png" alt="National Olympiad in Informatics 2024 diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>Cloudflight Coding Contest</strong></div>
+                <div class="achievement-result"><span>Participated in the 39th Round Classic Edition</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>The Regional Trandisciplinary Competition "InfoChim"</strong></div>
+                <div class="achievement-result"><span>3rd prize</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+                <details class="proof-details">
+                  <summary>View certificate</summary>
+                  <div class="proof-gallery" data-gallery="infochim-2024">
+                    <button class="proof-thumb" type="button" data-caption="InfoChim 2024 — 3rd prize">
+                      <img src="./assets/diplomaInfoChim2024.png" alt="InfoChim 2024 diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+            </div>
+          </div>
+
+          <div class="timeline-year reveal-on-scroll">
+            <div class="timeline-marker">24–25</div>
+            <div class="timeline-content">
+              <h3>2024 – 2025</h3>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>County Stage of the National Olympiad in Informatics</strong></div>
+                <div class="achievement-result"><span>Mention · 112.5/300 points</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+                <details class="proof-details">
+                  <summary>View certificate</summary>
+                  <div class="proof-gallery" data-gallery="oji-2025">
+                    <button class="proof-thumb" type="button" data-caption="National Olympiad in Informatics — County Stage, 2025">
+                      <img src="./assets/diplomaOJI2025.png" alt="National Olympiad in Informatics 2025 diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>Cloudflight Coding Contest · School Edition</strong></div>
+                <div class="achievement-result"><span>7th place in Iași · 40th Round</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>Cloudflight Coding Contest · Classic Edition</strong></div>
+                <div class="achievement-result"><span>12th place in Iași · 40th Round</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>Olympiad of Applied Informatics AcadNet</strong></div>
+                <div class="achievement-result"><span>Participated in the nationals</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+                <details class="proof-details">
+                  <summary>View certificate</summary>
+                  <div class="proof-gallery" data-gallery="acadnet-2025">
+                    <button class="proof-thumb" type="button" data-caption="Olympiad of Applied Informatics AcadNet — 2025">
+                      <img src="./assets/diplomaAcadNet2025.png" alt="AcadNet 2025 diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>RAU-Coder National Contest</strong></div>
+                <div class="achievement-result"><span>17th place + Diploma of Merit</span></div>
+                <div class="achievement-resource"><a href="https://devhack.rau.ro/2025_clasament.html" target="_blank" rel="noopener">Leaderboard ↗</a></div>
+                <details class="proof-details">
+                  <summary>View certificate</summary>
+                  <div class="proof-gallery" data-gallery="rau-coder-2025">
+                    <button class="proof-thumb" type="button" data-caption="RAU-Coder National Contest 2025 — Diploma of Merit">
+                      <img src="./assets/diplomaRAU-Coder2025.png" alt="RAU-Coder 2025 diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+            </div>
+          </div>
+
+          <div class="timeline-year reveal-on-scroll">
+            <div class="timeline-marker">25–26</div>
+            <div class="timeline-content">
+              <h3>2025 – 2026</h3>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>JetBrains Bug Contest 2025</strong></div>
+                <div class="achievement-result"><span>9th place in Iași · 19th place nationally</span></div>
+                <div class="achievement-resource"><a href="https://youthcodingcup.com/leaderboard" target="_blank" rel="noopener">Leaderboard ↗</a></div>
+                <details class="proof-details">
+                  <summary>View certificate</summary>
+                  <div class="proof-gallery" data-gallery="bug-contest-2025">
+                    <button class="proof-thumb" type="button" data-caption="JetBrains Bug Contest 2025 — certificate">
+                      <img src="./assets/diplomaBugContest2025.png" alt="JetBrains Bug Contest 2025 diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>JetBrains Academy Youth Challenge</strong></div>
+                <div class="achievement-result"><span>93rd place overall internationally</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+                <details class="proof-details">
+                  <summary>View certificate</summary>
+                  <div class="proof-gallery" data-gallery="ayc-2025">
+                    <button class="proof-thumb" type="button" data-caption="JetBrains Academy Youth Challenge 2025 — certificate">
+                      <img src="./assets/diplomaAYC2025.png" alt="JetBrains Academy Youth Challenge diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>IIOT 2025–2026 · Round I</strong></div>
+                <div class="achievement-result"><span>6th place in Iași · 261/700 points · Team SIGKILLers</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>AMC 12B 2025</strong></div>
+                <div class="achievement-result"><span>Participated · 7/25</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>Cloudflight Coding Contest · 41st Round School Edition</strong></div>
+                <div class="achievement-result"><span>7th place in Iași</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+                <details class="proof-details">
+                  <summary>View certificate</summary>
+                  <div class="proof-gallery" data-gallery="cloudflight-41-school">
+                    <button class="proof-thumb" type="button" data-caption="Cloudflight Coding Contest — 41st Round School Edition">
+                      <img src="./assets/diplomaCloudflight41School.png" alt="Cloudflight 41 School diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>Cloudflight Coding Contest · 41st Round Classic Edition</strong></div>
+                <div class="achievement-result"><span>10th place in Iași</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+                <details class="proof-details">
+                  <summary>View certificates and team photo</summary>
+                  <div class="proof-gallery" data-gallery="cloudflight-41-classic">
+                    <button class="proof-thumb" type="button" data-caption="Cloudflight Coding Contest — 41st Round Classic Edition certificate">
+                      <img src="./assets/diplomaCloudflight41ClassicEu.png" alt="Cloudflight 41 Classic diploma" loading="lazy">
+                    </button>
+                    <button class="proof-thumb" type="button" data-caption="Cloudflight Coding Contest — 41st Round Classic Edition team certificate/photo">
+                      <img src="./assets/diplomaCloudflight41ClassicEchipa.png" alt="Cloudflight 41 Classic team certificate" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>IIOT 2025–2026 · Round II</strong></div>
+                <div class="achievement-result"><span>207/700 points · 7th place in Iași with 468 total points · Team SIGKILLers</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>IIOT 2025–2026 · Round III</strong></div>
+                <div class="achievement-result"><span>219/700 points · 6th place in Iași with 687 total points · Team SIGKILLers</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>Moisil++ 2026</strong></div>
+                <div class="achievement-result"><span>2nd place</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+                <details class="proof-details">
+                  <summary>View certificate</summary>
+                  <div class="proof-gallery" data-gallery="moisil-2026">
+                    <button class="proof-thumb" type="button" data-caption="Moisil++ 2026 — 2nd place">
+                      <img src="./assets/diploma_Moisil++.png" alt="Moisil++ 2026 diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>Ambassador of Excellence in Informatics</strong></div>
+                <div class="achievement-result"><span>Awarded by "Grigore Moisil" Theoretical High School of Informatics in Iași</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+                <details class="proof-details">
+                  <summary>View recognition</summary>
+                  <div class="proof-gallery" data-gallery="ambassador-2026">
+                    <button class="proof-thumb" type="button" data-caption="Ambassador of Excellence in Informatics — recognition">
+                      <img src="./assets/Ambasador_al_Informaticii.png" alt="Ambassador of Excellence in Informatics certificate" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>ACTS Online 2026</strong></div>
+                <div class="achievement-result"><span>Participated in the online camp organised by JetBrains, Constructor University and Neapolis University Pafos</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>IIOT 2025–2026 · Round IV</strong></div>
+                <div class="achievement-result"><span>114/700 points · 6th place in Iași with 801 total points · Team SIGKILLers</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>County Stage of the National Olympiad in Informatics</strong></div>
+                <div class="achievement-result"><span>Mention · 192/300 points</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>InfoGym Final Round</strong></div>
+                <div class="achievement-result"><span>2nd place in 11th grade</span></div>
+                <div class="achievement-resource"><a href="https://www.facebook.com/photo/?fbid=1553354986791820&set=pcb.1553358723458113" target="_blank" rel="noopener">Leaderboard ↗</a></div>
+                <details class="proof-details">
+                  <summary>View photos</summary>
+                  <div class="proof-gallery" data-gallery="infogym-2026">
+                    <button class="proof-thumb" type="button" data-caption="InfoGym Final Round 2026 — group photo">
+                      <img src="./assets/poza_grup_infogym_2026.png" alt="InfoGym 2026 group photo" loading="lazy">
+                    </button>
+                    <button class="proof-thumb" type="button" data-caption="InfoGym Final Round 2026 — medal and diploma">
+                      <img src="./assets/medalie+diploma_infogym_2026.png" alt="InfoGym 2026 medal and diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>FIICode Qualifying Round</strong></div>
+                <div class="achievement-result"><span>7th place overall · qualified for final round</span></div>
+                <div class="achievement-resource"><a href="https://kilonova.ro/contests/3060/leaderboard" target="_blank" rel="noopener">Leaderboard ↗</a></div>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>ITMarathon Junior Dev Challenge</strong></div>
+                <div class="achievement-result"><span>3rd place</span></div>
+                <div class="achievement-resource placeholder" aria-hidden="true"></div>
+                <details class="proof-details">
+                  <summary>View photos</summary>
+                  <div class="proof-gallery" data-gallery="itmarathon-2026">
+                    <button class="proof-thumb" type="button" data-caption="ITMarathon Junior Dev Challenge 2026 — group photo">
+                      <img src="./assets/poza_grup_itmjd_2026.png" alt="ITMarathon Junior Dev Challenge group photo" loading="lazy">
+                    </button>
+                    <button class="proof-thumb" type="button" data-caption="ITMarathon Junior Dev Challenge 2026 — diploma">
+                      <img src="./assets/poza_diploma_itmjd_2026.png" alt="ITMarathon Junior Dev Challenge diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>ACTS 2026.2</strong></div>
+                <div class="achievement-result"><span>Invited to the Software Engineering track in Germany</span></div>
+                <div class="achievement-resource"><a href="https://www.linkedin.com/school/acts-programming-camp" target="_blank" rel="noopener">Program ↗</a></div>
+                <details class="proof-details">
+                  <summary>View ACTS invitation</summary>
+                  <div class="proof-gallery" data-gallery="acts-2026-2">
+                    <button class="proof-thumb" type="button" data-caption="Excited to join ACTS 2026.2">
+                      <img src="./assets/Excited to join ACTS 2026.2.png" alt="ACTS 2026.2 invitation post" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>FIICode Final Round</strong></div>
+                <div class="achievement-result"><span>8th place</span></div>
+                <div class="achievement-resource"><a href="https://kilonova.ro/contests/3146/leaderboard" target="_blank" rel="noopener">Leaderboard ↗</a></div>
+                <details class="proof-details">
+                  <summary>View certificate</summary>
+                  <div class="proof-gallery" data-gallery="fiicode-final-2026">
+                    <button class="proof-thumb" type="button" data-caption="FIICode Final Round 2026 — diploma">
+                      <img src="./assets/diploma_finala_fiicode_2026.png" alt="FIICode 2026 final round diploma" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="achievement-name"><strong>ISCPC 2026</strong></div>
+                <div class="achievement-result"><span>7th place · Team UAIC_SmenuSnickr</span></div>
+                <div class="achievement-resource"><a href="https://vjudge.net/contest/818490#rank" target="_blank" rel="noopener">Leaderboard ↗</a></div>
+                <details class="proof-details">
+                  <summary>View team photo</summary>
+                  <div class="proof-gallery" data-gallery="iscpc-2026">
+                    <button class="proof-thumb" type="button" data-caption="ISCPC 2026 — team UAIC_SmenuSnickr">
+                      <img src="./assets/poza_echipa_iscpc2026.png" alt="ISCPC 2026 team photo" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+
+              <article class="achievement-item">
+                <div class="schievement-name"><strong>ACTS 2026.2 SE Track</strong></div>
+                <div class="achievement-result"><span>1st place · Best Project Award</span></div>
+                <details class="proof-details">
+                  <summary>View team photo</summary>
+                  <div class="proof-gallery" data-gallery="">
+                    <button class="proof-thumb" type="button" data-caption="ACTS 2026.2 — Untitled Messenger App dev team">
+                      <img src="./assets/poza_echipa_acts2026-2.png" alt="ACTS 2026.2 dev team" loading="lazy">
+                    </button>
+                  </div>
+                </details>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-footer-note">More milestones will be added as the journey continues.</div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">05 · Toolbox</span>
+          <h2>Skills</h2>
+          <p>Grouped by how I use them rather than presented as one long list.</p>
+        </div>
+
+        <div class="skills-groups">
+          <div class="skills-group reveal-on-scroll" data-tilt-soft>
+            <h3>Programming</h3>
+            <div class="skills-list"><span>C++</span><span>C#</span><span>Python</span><span>Dart</span><span>JavaScript</span></div>
+          </div>
+          <div class="skills-group reveal-on-scroll" data-tilt-soft>
+            <h3>Mobile & Frontend</h3>
+            <div class="skills-list"><span>Flutter</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+          <div class="skills-group reveal-on-scroll" data-tilt-soft>
+            <h3>Tools & Workflow</h3>
+            <div class="skills-list"><span>Git</span><span>GitHub</span><span>Docker</span><span>Team Development</span></div>
+          </div>
+          <div class="skills-group reveal-on-scroll" data-tilt-soft>
+            <h3>Algorithms & Engineering</h3>
+            <div class="skills-list"><span>Data Structures</span><span>Competitive Programming</span><span>Networking</span><span>Concurrency</span><span>Cryptography</span><span>Parsing</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="container contact-card">
+        <div>
+          <span class="section-kicker">06 · Contact</span>
+          <h2>Let's connect.</h2>
+          <p>For opportunities, collaborations, technical discussions or simply to talk about software engineering and competitive programming.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:frateanuiustinalexandru@yahoo.com">Email ↗</a>
+          <a href="https://github.com/Ju5t1natcoding" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/fr%C4%83%C8%9Beanu-iustin-alexandru-682263354/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Iustin-Alexandru Frățeanu. <span data-lang="rights">All rights reserved.</span></p>
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Iustin-Alexandru Frățeanu.</p>
+      <p>Built with HTML · CSS · JavaScript · Three.js</p>
+    </div>
   </footer>
+
+  <!-- Achievement image lightbox -->
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close image viewer">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">‹</button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-image" src="" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next image">›</button>
+  </div>
+
 </body>
 </html>
