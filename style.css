@@ -3291,6 +3291,54 @@ body.lightbox-open {
   font-size: 0.65rem;
 }
 
+.school-card{
+
+    width:220px;
+
+    padding:26px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(24,34,46,.95),
+            rgba(11,17,25,.95)
+        );
+
+    border:1px solid rgba(99,234,214,.18);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35);
+}
+
+.school-card img{
+
+    width:90px;
+    margin-bottom:18px;
+}
+
+.school-card h4{
+
+    color:var(--accent);
+
+    margin-bottom:8px;
+}
+
+.school-card span{
+
+    display:block;
+
+    font-weight:600;
+}
+
+.school-card small{
+
+    color:var(--text-muted);
+}
+
 .education-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
