@@ -3339,6 +3339,11 @@ body.lightbox-open {
     color:var(--text-muted);
 }
 
+.school-logo {
+    display: block;
+    margin: 0 auto;
+}
+
 .education-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
